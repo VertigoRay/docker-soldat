@@ -1,7 +1,8 @@
 # SOLDAT SERVER DOCKER
 # ---------------------------------------------
-FROM debian:stable
+FROM 32bit/debian:jessie
 MAINTAINER Hai Anh Hoang <hoanghaianh@gmail.com>
+
 
 # update debian packages
 RUN echo "update debian packages"
@@ -19,7 +20,15 @@ RUN cd soldat; unzip soldatserver2.7.8_1.6.8.zip
 RUN echo "copy configuration"
 ADD ./config/  /soldat/
 
+# add user soldat
+RUN useradd -ms /bin/bash soldat
+RUN chown -R soldat:soldat /soldat
+USER soldat
+
 # post setup
 RUN /bin/bash -c "source /soldat/setup.sh"
 
-CMD /soldat/soldatserver 
+EXPOSE 23073
+EXPOSE 23083
+
+CMD /soldat/soldatserver  
