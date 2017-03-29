@@ -4,9 +4,9 @@ A [soldat server](http://soldat.pl) docker implementation. This will automatical
 
 ## Using Docker Hub Server
 
-- `docker pull vertigoray/soldat`
+- `docker pull vertigoray/docker-soldat`
 
-# Default Settings
+## Default Settings
 
 - UDP: game port (default 23073)
 - TCP: admin port = game port (default 23073)
@@ -47,7 +47,7 @@ SOLDAT_INI_%SECTION%_%Setting_Name%
 | SOLDAT_INI_NETWORK_Greeting_Message | `Welcome to Vertigion. You are born to kill.` | |
 | SOLDAT_INI_NETWORK_Port | `23073` | *Probably should never change this.* |
 | SOLDAT_INI_NETWORK_Server_Name | `Vertigion Server` | |
-| SOLDAT_INI_NETWORK_Server_Info | `Server running in Docker (vertigoray/soldat). Courtesy of Vertigion (http://vertigion.com).` | |
+| SOLDAT_INI_NETWORK_Server_Info | `Server running in Docker (vertigoray/docker-soldat). Courtesy of Vertigion (http://vertigion.com).` | |
 
 If I've missed something that should have a default, please [submit an issue](https://github.com/VertigoRay/docker-soldat/issues).
 
@@ -58,7 +58,7 @@ To set `Bar` to `Hello World!` in the `FOO` section:
 ```bash
 docker run \
   -e "SOLDAT_INI_FOO_Bar=Hello World!" \
-  vertigoray/soldat
+  vertigoray/docker-soldat
 ```
 
 ***Note:*** *Obviously, this setting does nothing, but it would appear in the `soldat.ini` file.*
@@ -72,7 +72,7 @@ docker run \
   -e "SOLDAT_DOWNLOAD_INDEX_URL=https://static.soldat.pl/downloads" \
   -e "SOLDAT_VERSION=2.8.1_1.7.1" \
   -e "SOLDAT_INI_NETWORK_Admin_Password=algebraic" \
-  vertigoray/soldat
+  vertigoray/docker-soldat
 ```
 
 ***Note:*** *This will download the following server zip file: https://static.soldat.pl/downloads/soldatserver2.8.1_1.7.1.zip*
@@ -178,7 +178,7 @@ Max_Players=32
 Max_Spectators=10
 Min_Ping=0
 Port=23073
-Server_Info=Server running in Docker (vertigoray/soldat). Courtesy of Vertigion (http://vertigion.com).
+Server_Info=Server running in Docker (vertigoray/docker-soldat). Courtesy of Vertigion (http://vertigion.com).
 Server_Name=Vertigion Server
 Spectator_Chat=1
 T1_DeadSnapshot=50

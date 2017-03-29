@@ -30,7 +30,7 @@ SOLDAT_INI_NETWORK_Game_Password=${SOLDAT_INI_NETWORK_Game_Password:=123456}
 SOLDAT_INI_NETWORK_Greeting_Message=${SOLDAT_INI_NETWORK_Greeting_Message:=Welcome to Vertigion. You are born to kill.}
 SOLDAT_INI_NETWORK_Port=${SOLDAT_INI_NETWORK_Port:=23073}
 SOLDAT_INI_NETWORK_Server_Name=${SOLDAT_INI_NETWORK_Server_Name:=Vertigion Server}
-SOLDAT_INI_NETWORK_Server_Info=${SOLDAT_INI_NETWORK_Server_Info:=Server running in Docker (vertigoray/soldat). Courtesy of Vertigion (http://vertigion.com).}
+SOLDAT_INI_NETWORK_Server_Info=${SOLDAT_INI_NETWORK_Server_Info:=Server running in Docker (vertigoray/docker-soldat). Courtesy of Vertigion (http://vertigion.com).}
 
 
 prev_section=""
