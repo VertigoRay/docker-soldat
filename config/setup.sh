@@ -25,6 +25,7 @@ echo "Server URL:  ${SOLDAT_SERVER_URL}"
 
 echo "## SOLDAT INI File"
 
+SOLDAT_INI_GAME_Weapon_1=${SOLDAT_INI_GAME_Weapon_1:=1}
 SOLDAT_INI_NETWORK_Admin_Password=${SOLDAT_INI_NETWORK_Admin_Password:=admin}
 SOLDAT_INI_NETWORK_Game_Password=${SOLDAT_INI_NETWORK_Game_Password:=123456}
 SOLDAT_INI_NETWORK_Greeting_Message=${SOLDAT_INI_NETWORK_Greeting_Message:=Welcome to Vertigion. You are born to kill.}
