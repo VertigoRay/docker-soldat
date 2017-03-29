@@ -1,13 +1,5 @@
 version: '3'
-services:
-  server:
-    image: vertigoray/docker-soldat
-    ports:
-      - '23073:23073/tcp'
-      - '23073:23073/udp'
-      - '23083:23083/tcp'
 
-version: '3'
 services:
   server:
     image: 127.0.0.1:5000/vertigoray/docker-soldat
