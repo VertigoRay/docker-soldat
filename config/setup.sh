@@ -12,6 +12,7 @@ echo "Download URL:    ${SOLDAT_DOWNLOAD_INDEX_URL}"
 SOLDAT_VERSION=${SOLDAT_VERSION:=latest}
 echo "Desired Version: ${SOLDAT_VERSION}"
 
+if [ $SOLDAT_VERSION == "latest" ]; then
 	SOLDAT_SERVER_ZIP=`wget --no-check-certificate -O - -o /dev/null $SOLDAT_DOWNLOAD_INDEX_URL | grep -o -E "soldatserver[0-9]+\.[0-9]+\.[0-9]+_[0-9]+\.[0-9]+\.[0-9]+\.zip" | sort | tail -1`
 else
 	SOLDAT_SERVER_ZIP="soldatserver${SOLDAT_VERSION}.zip"
