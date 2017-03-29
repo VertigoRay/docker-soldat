@@ -1,0 +1,8 @@
+version: '3'
+services:
+  server:
+    image: vertigoray/soldat
+    ports:
+      - '23073:23073/tcp'
+      - '23073:23073/udp'
+      - '23083:23083/tcp'
