@@ -23,7 +23,7 @@ SOLDAT_SERVER_URL="${SOLDAT_DOWNLOAD_INDEX_URL}/${SOLDAT_SERVER_ZIP}"
 echo "Server URL:  ${SOLDAT_SERVER_URL}"
 
 
-echo "## INI File"
+echo "## SOLDAT INI File"
 
 SOLDAT_INI_NETWORK_Admin_Password=${SOLDAT_INI_NETWORK_Admin_Password:=admin}
 SOLDAT_INI_NETWORK_Game_Password=${SOLDAT_INI_NETWORK_Game_Password:=123456}
@@ -50,6 +50,25 @@ for var in ${!SOLDAT_INI*}; do
 done
 
 
+echo "## SERVER INI File"
+
+prev_section=""
+regex='SERVER_INI_([a-zA-Z0-9]+)_(.+)'
+for var in ${!SERVER_INI*}; do
+	echo "${var}: ${!var}"
+	if [[ $var =~ $regex ]]; then
+		section="${BASH_REMATCH[1]}"
+		name="${BASH_REMATCH[2]}"
+		if [[ $section != $prev_section ]]; then
+			prev_section=$section
+			echo >> /tmp/server.ini
+			echo "[${section}]" >> /tmp/server.ini
+		fi
+		echo "${name}=${!var}" >> /tmp/server.ini
+	fi
+done
+
+
 
 echo "# Download and Extract"
 
@@ -62,6 +81,7 @@ unzip $SOLDAT_SERVER_ZIP
 echo "# Setup server in $(pwd)"
 
 mv /tmp/soldat.ini /soldat
+mv /tmp/server.ini /soldat
 chmod +x soldatserver
 chmod -R 0777 logs
 chmod -R u+w ./logs/

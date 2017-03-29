@@ -6,3 +6,107 @@ services:
       - '23073:23073/tcp'
       - '23073:23073/udp'
       - '23083:23083/tcp'
+
+version: '3'
+services:
+  server:
+    image: 127.0.0.1:5000/vertigoray/docker-soldat
+    environment:
+      - SOLDAT_INI_BOTS_Chat=0
+      - SOLDAT_INI_BOTS_Difficulty=50
+      - SOLDAT_INI_GAME_Advance_Amount=1
+      - SOLDAT_INI_GAME_AntiSpy_Chat=0
+      - SOLDAT_INI_GAME_Blue_Points_Time=5
+      - SOLDAT_INI_GAME_Bonus_Berserker=1
+      - SOLDAT_INI_GAME_Bonus_Cluster=1
+      - SOLDAT_INI_GAME_Bonus_FlameGod=1
+      - SOLDAT_INI_GAME_Bonus_Frequency=2
+      - SOLDAT_INI_GAME_Bonus_Predator=1
+      - SOLDAT_INI_GAME_Bonus_Vest=1
+      - SOLDAT_INI_GAME_Bullet_Time=0
+      - SOLDAT_INI_GAME_Capture_Limit=10
+      - SOLDAT_INI_GAME_Deathmatch_Limit=30
+      - SOLDAT_INI_GAME_Debug_Mode=0
+      - SOLDAT_INI_GAME_Friendly_Fire=0
+      - SOLDAT_INI_GAME_GameStyle=3
+      - SOLDAT_INI_GAME_Guns_Collide=0
+      - SOLDAT_INI_GAME_Hold_Limit=80
+      - SOLDAT_INI_GAME_HTF_Points_Time=5
+      - SOLDAT_INI_GAME_Infiltration_Limit=90
+      - SOLDAT_INI_GAME_Kits_Collide=0
+      - SOLDAT_INI_GAME_Logging=1
+      - SOLDAT_INI_GAME_Loop_Maps=1
+      - SOLDAT_INI_GAME_Max_Grenades=5
+      - SOLDAT_INI_GAME_MaxWaveRespawn_Time=240
+      - SOLDAT_INI_GAME_MinWaveRespawn_Time=120
+      - SOLDAT_INI_GAME_NoSniperLine=1
+      - SOLDAT_INI_GAME_Pointmatch_Limit=30
+      - SOLDAT_INI_GAME_Radio=1
+      - SOLDAT_INI_GAME_Rambomatch_Limit=30
+      - SOLDAT_INI_GAME_Random_Bots=0
+      - SOLDAT_INI_GAME_Random_Bots_1=0
+      - SOLDAT_INI_GAME_Random_Bots_2=0
+      - SOLDAT_INI_GAME_Random_Bots_3=0
+      - SOLDAT_INI_GAME_Random_Bots_4=0
+      - SOLDAT_INI_GAME_Realistic_Mode=0
+      - SOLDAT_INI_GAME_Red_Points_Capture=30
+      - SOLDAT_INI_GAME_Respawn_Time=180
+      - SOLDAT_INI_GAME_Stationary_Guns=0
+      - SOLDAT_INI_GAME_Survival_Mode=0
+      - SOLDAT_INI_GAME_Teammatch_Limit=60
+      - SOLDAT_INI_GAME_Time_Limit=10
+      - SOLDAT_INI_GAME_Weapon_10=1
+      - SOLDAT_INI_GAME_Weapon_11=1
+      - SOLDAT_INI_GAME_Weapon_12=1
+      - SOLDAT_INI_GAME_Weapon_13=1
+      - SOLDAT_INI_GAME_Weapon_14=1
+      - SOLDAT_INI_GAME_Weapon_1=1
+      - SOLDAT_INI_GAME_Weapon_2=1
+      - SOLDAT_INI_GAME_Weapon_3=1
+      - SOLDAT_INI_GAME_Weapon_4=1
+      - SOLDAT_INI_GAME_Weapon_5=1
+      - SOLDAT_INI_GAME_Weapon_6=1
+      - SOLDAT_INI_GAME_Weapon_7=1
+      - SOLDAT_INI_GAME_Weapon_8=1
+      - SOLDAT_INI_GAME_Weapon_9=1
+      - SOLDAT_INI_GAME_Weapons_Mode=0
+      - SOLDAT_INI_NETWORK_Advanced_Spectate=1
+      - SOLDAT_INI_NETWORK_Allow_Download=1
+      - SOLDAT_INI_NETWORK_ASE_Register=1
+      - SOLDAT_INI_NETWORK_Balance_Teams=0
+      - SOLDAT_INI_NETWORK_Clanmatch=0
+      - SOLDAT_INI_NETWORK_Compression=1
+      - SOLDAT_INI_NETWORK_Connection=LAN
+      - SOLDAT_INI_NETWORK_Default_Remote_Host=
+      - SOLDAT_INI_NETWORK_Disable_AntiCheat_Kick=0
+      - SOLDAT_INI_NETWORK_Disable_Minimap=1
+      - SOLDAT_INI_NETWORK_Dont_Forward=0
+      - SOLDAT_INI_NETWORK_External_Anti_Cheat=0
+      - SOLDAT_INI_NETWORK_Flooding_Packets_Internet=42
+      - SOLDAT_INI_NETWORK_Flooding_Packets_LAN=80
+      - SOLDAT_INI_NETWORK_Internet_Connection=3
+      - SOLDAT_INI_NETWORK_Lobby_IP=
+      - SOLDAT_INI_NETWORK_Lobby_Register=1
+      - SOLDAT_INI_NETWORK_LogFilesUpdate=300
+      - SOLDAT_INI_NETWORK_Max_Flood_Warnings=4
+      - SOLDAT_INI_NETWORK_Max_KnifeCheat_Warnings=14
+      - SOLDAT_INI_NETWORK_Max_Ping=400
+      - SOLDAT_INI_NETWORK_Max_Ping_Warnings=10
+      - SOLDAT_INI_NETWORK_Max_Players=32
+      - SOLDAT_INI_NETWORK_Max_Spectators=10
+      - SOLDAT_INI_NETWORK_MaxConnections=50
+      - SOLDAT_INI_NETWORK_Min_Ping=0
+      - SOLDAT_INI_NETWORK_Spectator_Chat=1
+      - SOLDAT_INI_NETWORK_T1_DeadSnapshot=50
+      - SOLDAT_INI_NETWORK_T1_Delta=4
+      - SOLDAT_INI_NETWORK_T1_Heartbeat=135
+      - SOLDAT_INI_NETWORK_T1_MajorSnapshot=19
+      - SOLDAT_INI_NETWORK_T1_Ping=21
+      - SOLDAT_INI_NETWORK_T1_Snapshot=35
+      - SOLDAT_INI_NETWORK_T1_ThingSnapshot=31
+      - SOLDAT_INI_NETWORK_Vote_Cheat_Warnings=8
+      - SOLDAT_INI_NETWORK_Vote_Percent=60
+    ports:
+      - '23073:23073/tcp'
+      - '23073:23073/udp'
+      - '23083:23083/tcp'
