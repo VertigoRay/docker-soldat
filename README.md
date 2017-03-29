@@ -25,7 +25,7 @@ Here's the download configs:
 | SOLDAT_DOWNLOAD_INDEX_URL | `https://static.soldat.pl/downloads` | *No trailing slash.* |
 | SOLDAT_VERSION | Latest Version | This is the number in the `soldatserver` zip file name at the download index url (ie: `soldatserver2.8.0_1.7.0rc2.zip` is version `2.8.0_1.7.0rc2`) |
 
-Additionally, Anything in the `soldat.ini` is configurable via environment variables using the following variable naming convention:
+Additionally, anything in the `soldat.ini` is configurable via environment variables using the following variable naming convention:
 
 ```
 SOLDAT_INI_%SECTION%_%Setting_Name%
