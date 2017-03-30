@@ -1,7 +1,5 @@
 server:
   build: .
-  # volumes:
-  #   - ./html:/var/www/html
   ports:
     - "23073:23073"
     - "23083:23083"

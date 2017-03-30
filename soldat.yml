@@ -2,7 +2,7 @@ version: '3'
 
 services:
   server:
-    image: 127.0.0.1:5000/vertigoray/docker-soldat
+    image: vertigoray/docker-soldat
     environment:
       - SOLDAT_INI_BOTS_Chat=0
       - SOLDAT_INI_BOTS_Difficulty=50
