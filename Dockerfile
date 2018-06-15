@@ -8,7 +8,7 @@ MAINTAINER Raymond Piller <VertigoRay@vertigion.com>
 RUN apt-get update \
  && apt-get upgrade -y \
  && apt-get -y --force-yes install wget unzip \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* \
  && mkdir /soldat
 
 # copy soldat config
