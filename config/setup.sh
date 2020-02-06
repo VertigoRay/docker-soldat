@@ -1,14 +1,15 @@
 #!/bin/bash
 
-
-
+echo "######################################"
 echo "# Configuring"
-
-
+echo "######################################"
+echo "######################################"
 echo "## Globals"
+echo "######################################"
 
 SOLDAT_DOWNLOAD_INDEX_URL=${SOLDAT_DOWNLOAD_INDEX_URL:=http://static.soldat.pl/downloads}
 echo "Download URL:    ${SOLDAT_DOWNLOAD_INDEX_URL}"
+
 SOLDAT_VERSION=${SOLDAT_VERSION:=latest}
 echo "Desired Version: ${SOLDAT_VERSION}"
 
@@ -23,7 +24,10 @@ SOLDAT_SERVER_URL="${SOLDAT_DOWNLOAD_INDEX_URL}/${SOLDAT_SERVER_ZIP}"
 echo "Server URL:  ${SOLDAT_SERVER_URL}"
 
 
+
+echo "######################################"
 echo "## SOLDAT INI File"
+echo "######################################"
 
 SOLDAT_INI_GAME_Weapon_1=${SOLDAT_INI_GAME_Weapon_1:=1}
 SOLDAT_INI_NETWORK_Admin_Password=${SOLDAT_INI_NETWORK_Admin_Password:=admin}
@@ -34,6 +38,7 @@ SOLDAT_INI_NETWORK_Server_Name=${SOLDAT_INI_NETWORK_Server_Name:=Vertigion Serve
 SOLDAT_INI_NETWORK_Server_Info=${SOLDAT_INI_NETWORK_Server_Info:=Server running in Docker (vertigoray/docker-soldat). Courtesy of Vertigion (http://vertigion.com).}
 
 
+touch /tmp/soldat.ini
 prev_section=""
 regex='SOLDAT_INI_([a-zA-Z0-9]+)_(.+)'
 for var in ${!SOLDAT_INI*}; do
@@ -51,8 +56,12 @@ for var in ${!SOLDAT_INI*}; do
 done
 
 
-echo "## SERVER INI File"
 
+echo "######################################"
+echo "## SERVER INI File"
+echo "######################################"
+
+touch /tmp/server.ini
 prev_section=""
 regex='SERVER_INI_([a-zA-Z0-9]+)_(.+)'
 for var in ${!SERVER_INI*}; do
@@ -71,25 +80,34 @@ done
 
 
 
+echo "######################################"
 echo "# Download and Extract"
+echo "######################################"
 
 wget --no-check-certificate $SOLDAT_SERVER_URL -P /soldat/
-cd /soldat
-unzip -o $SOLDAT_SERVER_ZIP
+unzip -o /soldat/$SOLDAT_SERVER_ZIP -d /soldat
+rm /soldat/$SOLDAT_SERVER_ZIP
+ls -la /soldat
 
 
 
+echo "######################################"
 echo "# Setup server in $(pwd)"
+echo "######################################"
 
+ls -la /tmp
 mv /tmp/soldat.ini /soldat
 mv /tmp/server.ini /soldat
-chmod +x soldatserver
-chmod -R 0777 logs
-chmod -R u+w ./logs/
-chmod -R u+w ./anti-cheat/
-chmod 666 banned*.txt
+chmod +x /soldat/soldatserver
+chmod -R 0777 /soldat/logs
+chmod -R u+w /soldat/logs
+chmod -R u+w /soldat/anti-cheat
+chmod 666 /soldat/banned*.txt
+ls -la /soldat
+cd /soldat
 
 
-
+echo "######################################"
 echo "# Run Server"
-/soldat/soldatserver
+echo "######################################"
+./soldatserver

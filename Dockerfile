@@ -1,15 +1,14 @@
 # SOLDAT SERVER DOCKER
 # ---------------------------------------------
-FROM 32bit/debian:jessie
-MAINTAINER Raymond Piller <VertigoRay@vertigion.com>
-
+FROM 32bit/debian:latest
+LABEL maintainer="Raymond Piller <VertigoRay@vertigion.com>"
 
 # update debian packages
-RUN apt-get update \
- && apt-get upgrade -y --force-yes \
- && apt-get -y --force-yes install wget unzip \
- && rm -rf /var/lib/apt/lists/* \
- && mkdir /soldat
+RUN apt-get update && \
+    apt-get -y --force-yes upgrade && \
+    apt-get -y --force-yes install wget unzip && \
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir /soldat
 
 # copy soldat config
 ADD ./config/ /soldat/
