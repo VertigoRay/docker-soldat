@@ -75,7 +75,7 @@ echo "# Download and Extract"
 
 wget --no-check-certificate $SOLDAT_SERVER_URL -P /soldat/
 cd /soldat
-unzip $SOLDAT_SERVER_ZIP
+unzip -o $SOLDAT_SERVER_ZIP
 
 
 
