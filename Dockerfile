@@ -14,13 +14,11 @@ RUN apt-get update && \
 ADD ./config/ /soldat/
 
 # add user soldat
-RUN useradd -ms /bin/bash soldat
-RUN chown -R soldat:soldat /soldat
+RUN useradd -ms /bin/bash soldat && \
+    chown -R soldat:soldat /soldat
+
 USER soldat
-
-
 EXPOSE 23073
 EXPOSE 23083
-
 
 CMD /bin/bash -c "source /soldat/setup.sh"
