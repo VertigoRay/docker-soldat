@@ -6,7 +6,7 @@ MAINTAINER Raymond Piller <VertigoRay@vertigion.com>
 
 # update debian packages
 RUN apt-get update \
- && apt-get upgrade -y \
+ && apt-get upgrade -y --force-yes \
  && apt-get -y --force-yes install wget unzip \
  && rm -rf /var/lib/apt/lists/* \
  && mkdir /soldat
