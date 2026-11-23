@@ -62,7 +62,7 @@ SERVER_INI_NETWORK_OnScriptCrash=recompile
 | -------------------- | ------------- | ----- |
 | SOLDAT_INI_GAME_Weapon_1 | `1` | *Desert Eagles* |
 | SOLDAT_INI_NETWORK_Admin_Password | `admin` | |
-| SOLDAT_INI_NETWORK_Game_Password | `123456` | |
+| SOLDAT_INI_NETWORK_Game_Password | `123456` | Set explicitly to an empty string (`-e SOLDAT_INI_NETWORK_Game_Password=`) for a public game. This setting does not affect the admin password. |
 | SOLDAT_INI_NETWORK_Greeting_Message | `Welcome to Vertigion. You are born to kill.` | |
 | SOLDAT_INI_NETWORK_Port | `23073` | *Probably should never change this.* |
 | SOLDAT_INI_NETWORK_Server_Name | `Vertigion Server` | |
